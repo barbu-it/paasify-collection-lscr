@@ -1,0 +1,2 @@
+app_port: 9696
+app_description: Prowlarr is an indexer manager/proxy, it supports management of both Torrent Trackers and Usenet Indexers. It integrates seamlessly with Lidarr, Mylar3, Radarr, Readarr, and Sonarr.

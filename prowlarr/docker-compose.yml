@@ -1,0 +1,14 @@
+---
+version: "3.9"
+
+services:
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    environment:
+      PUID: $app_pgid
+      PGID: $app_pgid
+      TZ: $app_tz
+    volumes:
+      - $app_dir_conf:/config
+

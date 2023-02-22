@@ -1,0 +1,14 @@
+---
+version: "3.9"
+
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:libtorrentv1
+    environment:
+      - PUID=$app_puid
+      - PGID=$app_pgid
+      - TZ=$app_tz
+      - WEBUI_PORT=$app_port
+    volumes:
+      - $app_dir_conf:/config
+      - $app_dir_data:/data/torrents
