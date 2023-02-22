@@ -4,7 +4,7 @@
 
 # Paasify Collection: linuxserver
 
-This collection is contains to [https://www.linuxserver.io/]() images. A list of all images available images is available on their official [fleet](https://fleet.linuxserver.io/) website.
+This collection is contains to [linuxserver.io](https://www.linuxserver.io/) images. A list of all images available images is available on their official [fleet](https://fleet.linuxserver.io/) website.
 
 ## Quickstart
 
@@ -55,5 +55,5 @@ Paasify project maintened by:
 
 * Author: mrjk
 * License: GPLv3
-* Repository: https://github.com/barbu-it/paasify-collection-lscr.git
+* Repository: [github.com/barbu-it/paasify-collection-lscr](https://github.com/barbu-it/paasify-collection-lscr.git)
 
