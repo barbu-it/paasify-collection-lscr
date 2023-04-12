@@ -13,6 +13,7 @@ services:
 
     volumes:
       - $app_dir_conf:/config
+      - $app_dir_data:/data
 
 #    ports:
 #      - 8096:8096

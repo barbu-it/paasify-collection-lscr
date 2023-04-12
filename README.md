@@ -6,6 +6,9 @@
 
 This collection is contains to [linuxserver.io](https://www.linuxserver.io/) images. A list of all images available images is available on their official [fleet](https://fleet.linuxserver.io/) website.
 
+For an overview of the different arrs* services, please check [here](https://www.austinsuyoyo.com/post/2022-09-08-awesome-arrs/).
+
+
 ## Quickstart
 
 In your `paasify.yml` configuration, add in your sources:
