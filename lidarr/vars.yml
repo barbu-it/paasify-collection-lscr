@@ -1,0 +1,3 @@
+app_image: lscr.io/linuxserver/lidarr:latest
+app_port: 8686
+app_description: Lidarr is a music collection manager for Usenet and BitTorrent users

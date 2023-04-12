@@ -1,0 +1,4 @@
+#app_image: linuxserver/readarr:develop
+app_image: lscr.io/linuxserver/readarr:develop
+app_port: 8787
+app_description: Readarr - Book Manager and Automation (Sonarr for Ebooks)

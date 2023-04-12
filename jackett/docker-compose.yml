@@ -1,0 +1,15 @@
+---
+version: "3.9"
+
+services:
+  jackett:
+    image: ${app_image}
+    environment:
+      PUID: $app_pgid
+      PGID: $app_pgid
+      TZ: $app_tz
+      AUTO_UPDATE: "true"
+
+    volumes:
+      - $app_dir_conf:/config
+      - $app_dir_data/jackett:/downloads
