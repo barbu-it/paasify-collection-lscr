@@ -1,0 +1,3 @@
+app_port: 5514
+app_prot: udp
+app_description: Syslog-ng allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools.
