@@ -14,3 +14,4 @@ services:
         #- $app_dir_data:/data/torrents
         #- $app_dir_data:/downloads
       - $app_dir_data:/data
+      - $app_dir_template/frontends:/frontends
