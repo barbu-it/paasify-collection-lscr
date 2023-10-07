@@ -4,6 +4,7 @@ version: "3.9"
 services:
   readarr:
     image: ${app_image}
+    restart: unless-stopped
     environment:
       PUID: $app_pgid
       PGID: $app_pgid

@@ -3,6 +3,7 @@ version: "3"
 services:
   ntfy:
     image: binwiederhier/ntfy
+    restart: unless-stopped
     command:
       - serve
     environment:

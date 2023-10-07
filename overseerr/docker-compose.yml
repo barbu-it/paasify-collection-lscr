@@ -5,6 +5,7 @@ services:
 
   overseerr:
     image: lscr.io/linuxserver/overseerr:latest
+    restart: unless-stopped
     environment:
       PUID: $app_pgid
       PGID: $app_pgid

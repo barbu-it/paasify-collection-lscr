@@ -4,6 +4,7 @@ version: "3.9"
 services:
   homer:
     image: b4bz/homer
+    restart: unless-stopped
     environment:
       INIT_ASSETS: 1
       PUID: $app_pgid

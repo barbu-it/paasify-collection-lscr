@@ -5,6 +5,7 @@ services:
 
   radarr:
     image: lscr.io/linuxserver/bazarr:latest
+    restart: unless-stopped
     environment:
       PUID: $app_pgid
       PGID: $app_pgid

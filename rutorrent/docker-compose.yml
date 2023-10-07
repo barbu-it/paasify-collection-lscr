@@ -3,6 +3,7 @@ version: '3.8'
 services:
   rutorrent:
     image: ghcr.io/linuxserver/rutorrent
+    restart: unless-stopped
     environment:
       - PUID=$app_puid
       - PGID=$app_pgid

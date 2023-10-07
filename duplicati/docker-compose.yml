@@ -5,6 +5,7 @@ services:
   duplicati:
     image: lscr.io/linuxserver/duplicati:latest
     hostname: $app_fqdn
+    restart: unless-stopped
     environment:
       - TZ=$app_tz
         # - CLI_ARGS= #optional

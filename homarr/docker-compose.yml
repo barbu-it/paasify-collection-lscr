@@ -4,6 +4,7 @@ version: "3.9"
 services:
   homarr:
     image: ${app_image}
+    restart: unless-stopped
     environment:
       INIT_ASSETS: 1
       PUID: $app_pgid

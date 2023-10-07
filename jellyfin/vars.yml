@@ -1,2 +1,5 @@
+app_image_name: lscr.io/linuxserver/jellyfin
+app_image_version: latest
+
 app_port: 8096
 app_description: Jellyfin is a Free Software Media System that puts you in control of managing and streaming your media
