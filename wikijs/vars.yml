@@ -1,0 +1,2 @@
+traefik_svc_port: "3000"
+app_description: Personal wiki server
