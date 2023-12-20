@@ -1,0 +1,33 @@
+---
+version: "3.9"
+
+services:
+
+  spotifyd:
+    image: ${app_image:-${app_image_name}:${app_image_version}}
+    restart: unless-stopped
+    command: >
+      /usr/bin/spotifyd --no-daemon 
+      --cache-path /cache
+      --username "$spotify_user" --password "$spotify_pass"
+      --device-name "Spotify@WKS1"
+      --device-type "speaker"
+      --bitrate 160 
+      --backend alsa
+      --device default
+      --volume-controller alsa_linear
+      --mixer Master
+     
+    # --config-path /conf 
+    devices:
+      - "/dev/snd:/dev/snd"
+    environment:
+      PUID: $app_pgid
+      PGID: $app_pgid
+      TZ: $app_tz
+      RUST_BACKTRACE: full
+    volumes:
+      #      - $app_dir_conf:/conf
+      - $app_dir_cache:/cache
+        #- "/usr/share/alsa:/usr/share/alsa"
+

@@ -1,0 +1,4 @@
+app_image_name: ggoussard/spotifyd
+app_image_version: latest
+
+app_description: An open source Spotify client running as a UNIX daemon

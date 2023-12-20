@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+ code-server:
+   image: lscr.io/linuxserver/code-server:latest
+   environment:
+     - PUID=$app_puid
+     - PGID=$app_pgid
+     - TZ=$app_tz
+     - HASHED_PASSWORD= #optional
+     - SUDO_PASSWORD=$app_admin_pass #optional
+     - SUDO_PASSWORD_HASH= #optional
+     - DEFAULT_WORKSPACE=/docs #optional
+     #- PASSWORD=password #optional
+     #- PROXY_DOMAIN=code-server.my.domain #optional
+   volumes:
+     - $app_dir_conf:/config
+     - $app_dir_data:/docs/
+       #ports:
+       #  - 8044:8443
+

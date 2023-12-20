@@ -1,0 +1,5 @@
+app_image_name: lscr.io/linuxserver/dokuwiki
+app_image_version: latest
+
+app_port: 80
+app_description: DokuWiki is a simple to use and highly versatile Open Source wiki software.
