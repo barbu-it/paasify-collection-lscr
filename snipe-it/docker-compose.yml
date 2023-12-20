@@ -1,0 +1,39 @@
+---
+version: "3.9"
+
+networks:
+  db:
+
+services:
+
+  snipe-it:
+    image: lscr.io/linuxserver/snipe-it:latest
+    networks:
+      db:
+    environment:
+      PUID: $app_pgid
+      PGID: $app_pgid
+      TZ: $app_tz
+      APP_URL: "$app_expose_prot://$app_fqdn"
+      MAIL_ENV_FROM_ADDR: $app_admin_email
+      MAIL_ENV_FROM_NAME: "app@$app_fqdn"
+      MYSQL_PORT_3306_TCP_ADDR: "db"
+      MYSQL_PORT_3306_TCP_PORT: "3306"
+      MYSQL_DATABASE: "$app_db_name"
+      MYSQL_USER: "$app_db_user"
+      MYSQL_PASSWORD: "$app_db_pass"
+    volumes:
+      - $app_dir_conf:/config
+
+  db:
+    networks:
+      db:
+    image: mariadb:10.6
+    volumes:
+      - $app_dir_db_data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=$app_db_name
+      - MYSQL_USER=$app_db_user
+      - MYSQL_PASSWORD=$app_db_pass
+      - MYSQL_ROOT_PASSWORD=$app_db_admin_pass
+
