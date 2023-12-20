@@ -1,0 +1,14 @@
+---
+version: "3"
+services:
+  ntfy:
+    image: binwiederhier/ntfy
+    restart: unless-stopped
+    command:
+      - serve
+    environment:
+      - TZ=$app_tz    # optional: Change to your desired timezone
+    user: $app_puid:$app_pgid # optional: Set custom user/group or uid/gid
+    volumes:
+      - $app_dir_cache:/var/cache/ntfy
+      - $app_dir_conf:/etc/ntfy

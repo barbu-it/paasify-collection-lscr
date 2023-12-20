@@ -4,6 +4,7 @@ version: "3.9"
 services:
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:libtorrentv1
+    restart: unless-stopped
     environment:
       - PUID=$app_puid
       - PGID=$app_pgid
@@ -11,4 +12,7 @@ services:
       - WEBUI_PORT=$app_port
     volumes:
       - $app_dir_conf:/config
-      - $app_dir_data:/data/torrents
+        #- $app_dir_data:/data/torrents
+        #- $app_dir_data:/downloads
+      - $app_dir_data:/data
+      - $app_dir_template/frontends:/frontends

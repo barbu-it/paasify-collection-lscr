@@ -1,0 +1,5 @@
+---
+services:
+  borgbackup-server:
+    ports:
+      - ${app_expose_ip}:${app_expose_port:-$app_port}:${app_port}

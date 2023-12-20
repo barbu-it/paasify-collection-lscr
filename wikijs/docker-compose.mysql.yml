@@ -1,0 +1,26 @@
+networks:
+  db:
+
+services:
+  wikijs:
+    networks:
+      db:
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=$app_db_name
+      - DB_USER=$app_db_user
+      - DB_PASS=$app_db_pass
+
+  db:
+    networks:
+      db:
+    image: mariadb:10.6
+    volumes:
+      - $app_dir_db_data:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE=$app_db_name
+      - MYSQL_USER=$app_db_user
+      - MYSQL_PASSWORD=$app_db_pass
+      - MYSQL_ROOT_PASSWORD=$app_db_admin_pass
+  

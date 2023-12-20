@@ -1,0 +1,3 @@
+app_image: ghcr.io/ajnart/homarr
+app_port: 7575
+app_description: A simple, yet powerful dashboard for your server

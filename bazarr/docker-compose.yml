@@ -1,0 +1,16 @@
+---
+version: "3.9"
+
+services:
+
+  radarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    restart: unless-stopped
+    environment:
+      PUID: $app_pgid
+      PGID: $app_pgid
+      TZ: $app_tz
+    volumes:
+      - $app_dir_conf:/config
+      - $app_dir_data:/data
+

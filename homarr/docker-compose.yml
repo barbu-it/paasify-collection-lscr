@@ -1,0 +1,15 @@
+---
+version: "3.9"
+
+services:
+  homarr:
+    image: ${app_image}
+    restart: unless-stopped
+    environment:
+      INIT_ASSETS: 1
+      PUID: $app_pgid
+      PGID: $app_pgid
+      TZ: $app_tz
+    volumes:
+      - $app_dir_conf:/app/data/configs
+      - $app_dir_data/icons:/app/public/icons

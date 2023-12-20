@@ -1,2 +1,6 @@
+app_image_name: lscr.io/linuxserver/radarr
+app_image_version: latest
+
+
 app_port: 7878
 app_description: Radarr is a movie collection manager for Usenet and BitTorrent users

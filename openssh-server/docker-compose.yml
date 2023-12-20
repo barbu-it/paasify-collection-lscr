@@ -1,0 +1,27 @@
+---
+version: "3.9"
+
+services:
+  openssh-server:
+    image: lscr.io/linuxserver/openssh-server:latest
+    restart: unless-stopped
+    environment:
+      PUID: $app_pgid
+      PGID: $app_pgid
+      TZ: $app_tz
+
+      PUBLIC_KEY: ${app_user_pubkey}
+        # PUBLIC_KEY_FILE: /path/to/file #optional
+        # PUBLIC_KEY_DIR: /path/to/directory/containing/_only_/pubkeys #optional
+        # PUBLIC_KEY_URL: https://github.com/username.keys #optional
+
+      SUDO_ACCESS: false #optional
+      PASSWORD_ACCESS: false #optional
+
+        # USER_PASSWORD: password #optional
+        # USER_PASSWORD_FILE: /path/to/file #optional
+      USER_NAME: ${app_user_name:-user}
+
+    volumes:
+      - $app_dir_conf:/config
+      - $app_dir_data:/home

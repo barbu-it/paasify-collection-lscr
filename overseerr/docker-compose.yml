@@ -1,0 +1,15 @@
+---
+version: "3.9"
+
+services:
+
+  overseerr:
+    image: lscr.io/linuxserver/overseerr:latest
+    restart: unless-stopped
+    environment:
+      PUID: $app_pgid
+      PGID: $app_pgid
+      TZ: $app_tz
+    volumes:
+      - $app_dir_conf:/config
+

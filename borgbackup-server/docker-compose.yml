@@ -1,0 +1,21 @@
+---
+version: "3.9"
+
+services:
+  borgbackup-server:
+    image: nold360/borgserver:latest
+    restart: unless-stopped
+
+    environment:
+      BORG_SERVE_ARGS: >
+        --progress --debug
+      BORG_APPEND_ONLY: "no"
+      BORG_ADMIN: "no"
+
+      PUID: $app_pgid
+      PGID: $app_pgid
+      TZ: $app_tz
+
+    volumes:
+      - $app_dir_conf:/sshkeys
+      - $app_dir_data:/backup

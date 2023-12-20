@@ -1,0 +1,22 @@
+---
+version: "3.9"
+
+services:
+
+  radarr:
+    image: containrrr/watchtower
+    restart: unless-stopped
+    command: --interval 30 --scope ${app_watchtower_scope:-default}
+    environment:
+      PUID: $app_pgid
+      PGID: $app_pgid
+      TZ: $app_tz
+      WATCHTOWER_LABEL_ENABLE: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      - "com.centurylinklabs.watchtower.scope=${app_watchtower_scope:-default}"
+
+
+
+# - "com.centurylinklabs.watchtower.enable=false"

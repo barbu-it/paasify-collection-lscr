@@ -1,0 +1,7 @@
+---
+version: "3.9"
+
+services:
+  homer:
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro

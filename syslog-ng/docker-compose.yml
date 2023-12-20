@@ -1,0 +1,19 @@
+---
+version: "3.9"
+
+services:
+
+  syslog_ng:
+    image: lscr.io/linuxserver/syslog-ng:latest
+    environment:
+      PUID: $app_pgid
+      PGID: $app_pgid
+      TZ: $app_tz
+    volumes:
+      - $app_dir_conf:/config
+      - $app_dir_logs:/var/log
+    restart: unless-stopped
+    ports:
+      - $app_expose_ip:5514:5514/udp # Syslog UDP
+      - $app_expose_ip:5514:6601/tcp # Syslog TCP
+      - $app_expose_ip:5515:6514/tcp # Syslog TLS

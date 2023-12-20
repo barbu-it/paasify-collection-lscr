@@ -1,0 +1,2 @@
+# app_port: 7878
+app_description: A container-based solution for automating Docker container base image updates. 
