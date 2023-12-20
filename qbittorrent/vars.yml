@@ -1,2 +1,5 @@
+app_image_name: lscr.io/linuxserver/qbittorrent
+app_image_version: latest
+
 app_port: 8080
 app_description: The qBittorrent project aims to provide an open-source software alternative to µTorrent.
