@@ -1,0 +1,20 @@
+---
+version: "3.9"
+
+services:
+
+  joal:
+    image: anthonyraymond/joal:2.1.33
+    restart: unless-stopped
+    command:
+      - "--joal-conf=/config"
+      - "--spring.main.web-environment=true"
+      - "--server.port=$app_port"
+      - "--joal.ui.path.prefix=JOAL"
+      - "--joal.ui.secret-token=$app_admin_pass"
+    environment:
+      TZ: $app_tz
+    volumes:
+      - $app_dir_conf:/config
+      - $app_dir_data:/data
+

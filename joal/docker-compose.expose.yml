@@ -1,0 +1,5 @@
+---
+services:
+  joal:
+    ports:
+      - "$app_port:$app_port"

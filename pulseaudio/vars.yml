@@ -1,0 +1,4 @@
+app_image_name: woahbase/alpine-pulseaudio
+app_image_version: latest
+
+app_description: PulseAudio server
